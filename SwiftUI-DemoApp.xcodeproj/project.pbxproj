@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2AA0616E2DCFA4CF00BE5222 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0616D2DCFA4C800BE5222 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2A5EB2642DCF9F5600C34037 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		2A5EB2552DCF9F5500C34037 /* SwiftUI-DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-DemoApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5EB2632DCF9F5600C34037 /* SwiftUI-DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-DemoAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5EB26D2DCF9F5600C34037 /* SwiftUI-DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-DemoAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA0616D2DCFA4C800BE5222 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		2A5EB24C2DCF9F5400C34037 = {
 			isa = PBXGroup;
 			children = (
+				2AA0616D2DCFA4C800BE5222 /* README.md */,
 				2A5EB2572DCF9F5500C34037 /* SwiftUI-DemoApp */,
 				2A5EB2662DCF9F5600C34037 /* SwiftUI-DemoAppTests */,
 				2A5EB2702DCF9F5600C34037 /* SwiftUI-DemoAppUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA0616E2DCFA4CF00BE5222 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
