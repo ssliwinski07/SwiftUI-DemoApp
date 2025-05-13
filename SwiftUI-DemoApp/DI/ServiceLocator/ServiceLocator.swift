@@ -11,25 +11,28 @@ final class ServiceLocator {
     
     private init() {}
     
-    private static let _instance = ServiceLocator()
+    private static let _shared = ServiceLocator()
     
     private let _container = Container()
     
-    public static var I: ServiceLocator {
-        return _instance
+    public static var shared: ServiceLocator {
+        return _shared
     }
     
     func setupContainerProd() {
+        
+        // network modules - use "prod" for names
+        self._register(serviceType: NetworkManager.self, name: "prod") { NetworkManager.shared }
+        
         // services registration - use "prod" for names
-        ServiceLocator.I._register(serviceType: CarService.self, name: "prod") { CarService() }
+        self._register(serviceType: ExchangeRatesService.self, name: "prod") { ExchangeRatesService(networkManager: self.get(serviceType: NetworkManager.self, name: "prod")) }
         
         // repository registration - use "prod" for names
-        ServiceLocator.I._register(serviceType: CarRepositoryBase.self, name: "prod") { CarRepository(carService: ServiceLocator.I.get(serviceType: CarService.self, name: "prod")) }
+        self._register(serviceType: ExchangeRatesRepositoryBase.self, name: "prod") { ExchangeRatesRepository(exchangeRatesService: self.get(serviceType: ExchangeRatesService.self, name: "prod")) }
     }
     
     func setupContainerMock() {
         // repostiory registration - use "mock" for names
-        ServiceLocator.I._register(serviceType: CarRepositoryBase.self, name: "mock") { CarRepositoryMock() }
     }
     
     func get<Service>(serviceType: Service.Type, name: String) -> Service {

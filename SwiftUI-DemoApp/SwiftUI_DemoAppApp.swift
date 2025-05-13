@@ -11,22 +11,24 @@ import SwiftUI
 
 struct SwiftUI_DemoAppApp: App {
     
+    @StateObject private var contentViewModel = ContentViewModel(exchangeRatesRepository: ServiceLocator.shared.get(serviceType: ExchangeRatesRepositoryBase.self, name: "prod"))
     
     init(){
         _appInit()
     }
     
     var body: some Scene {
-   
+      
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: contentViewModel)
         }
     }
     
     private func _appInit() {
         #if DEBUG
-        ServiceLocator.I.setupContainerMock()
-        ServiceLocator.I.setupContainerProd()
+        ServiceLocator.shared.setupContainerMock()
+        ServiceLocator.shared.setupContainerProd()
+        
         print("Running in debug mode")
         #else
         ServiceLocator.I.setupContainerProd()

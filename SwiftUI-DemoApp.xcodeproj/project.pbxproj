@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3F1E862DD236DB004E684B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E852DD236DB004E684B /* CombineMoya */; };
+		2A3F1E882DD236DB004E684B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E872DD236DB004E684B /* Moya */; };
+		2A3F1E8A2DD236DB004E684B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E892DD236DB004E684B /* ReactiveMoya */; };
+		2A3F1E8C2DD236DB004E684B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E8B2DD236DB004E684B /* RxMoya */; };
 		2AA0616E2DCFA4CF00BE5222 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0616D2DCFA4C800BE5222 /* README.md */; };
 		2AA061702DCFA61F00BE5222 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0616F2DCFA61F00BE5222 /* .gitignore */; };
 		2AA061842DCFAD1500BE5222 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 2AA061832DCFAD1500BE5222 /* Swinject */; };
@@ -37,9 +41,22 @@
 		2AA0616F2DCFA61F00BE5222 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2AB9B5572DD2A115007BF925 /* Exceptions for "SwiftUI-DemoApp" folder in "SwiftUI-DemoApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2A5EB2542DCF9F5400C34037 /* SwiftUI-DemoApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2A5EB2572DCF9F5500C34037 /* SwiftUI-DemoApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2AB9B5572DD2A115007BF925 /* Exceptions for "SwiftUI-DemoApp" folder in "SwiftUI-DemoApp" target */,
+			);
 			path = "SwiftUI-DemoApp";
 			sourceTree = "<group>";
 		};
@@ -60,7 +77,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3F1E8C2DD236DB004E684B /* RxMoya in Frameworks */,
 				2AA061842DCFAD1500BE5222 /* Swinject in Frameworks */,
+				2A3F1E882DD236DB004E684B /* Moya in Frameworks */,
+				2A3F1E8A2DD236DB004E684B /* ReactiveMoya in Frameworks */,
+				2A3F1E862DD236DB004E684B /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +146,10 @@
 			packageProductDependencies = (
 				2AA061832DCFAD1500BE5222 /* Swinject */,
 				2AA061852DCFAD1500BE5222 /* Swinject-Dynamic */,
+				2A3F1E852DD236DB004E684B /* CombineMoya */,
+				2A3F1E872DD236DB004E684B /* Moya */,
+				2A3F1E892DD236DB004E684B /* ReactiveMoya */,
+				2A3F1E8B2DD236DB004E684B /* RxMoya */,
 			);
 			productName = "SwiftUI-DemoApp";
 			productReference = 2A5EB2552DCF9F5500C34037 /* SwiftUI-DemoApp.app */;
@@ -210,6 +235,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				2AA061822DCFAD1500BE5222 /* XCRemoteSwiftPackageReference "Swinject" */,
+				2A3F1E842DD236DB004E684B /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2A5EB2562DCF9F5500C34037 /* Products */;
@@ -411,6 +437,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-DemoApp/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -448,6 +476,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-DemoApp/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -603,6 +633,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A3F1E842DD236DB004E684B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		2AA061822DCFAD1500BE5222 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -614,6 +652,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A3F1E852DD236DB004E684B /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A3F1E842DD236DB004E684B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		2A3F1E872DD236DB004E684B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A3F1E842DD236DB004E684B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		2A3F1E892DD236DB004E684B /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A3F1E842DD236DB004E684B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		2A3F1E8B2DD236DB004E684B /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A3F1E842DD236DB004E684B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		2AA061832DCFAD1500BE5222 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AA061822DCFAD1500BE5222 /* XCRemoteSwiftPackageReference "Swinject" */;

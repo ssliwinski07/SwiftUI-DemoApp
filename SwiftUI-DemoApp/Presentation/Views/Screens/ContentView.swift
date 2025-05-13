@@ -8,37 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var isTextChanged = false
-    @State var isIconSizeChanged = false
-    
-    var textFirstOption = "Hello world"
-    var textSecondOption = "Hi, world :)"
+
+    @ObservedObject private var _viewModel: ContentViewModel
+
+    init(viewModel: ContentViewModel) {
+        self._viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .resizable()
-                .frame(width: isIconSizeChanged ? 100 : 50, height: isIconSizeChanged ? 100 : 50)
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-                .onTapGesture {
-                    isIconSizeChanged.toggle()
+            switch(_viewModel.isLoading, _viewModel.errorMsg, _viewModel.exchangeRatesEntity) {
+            case (true, _, _):
+                ProgressView()
+            case (_, let error?, _):
+                Text(error)
+            case (_, _, let rates?):
+                if let firstRate = rates.rates.first {
+                    Text(firstRate.code)
                 }
-           
-            Text(isTextChanged ? textFirstOption : textSecondOption).onAppear {
-                let carRepository = ServiceLocator.I.get(serviceType: CarRepositoryBase.self, name: "prod")
-                Task {
-                    await print(carRepository.fetchCars())
-                }
-            }.onTapGesture {
-                isTextChanged.toggle()
+            default:
+                Text("\(GeneralErrors.customMessage(message: "No data"))")
+                
             }
         }
         .padding()
+        .onAppear {
+            Task {
+                do {
+                    try await _viewModel.getCurrentRates()
+                    print(_viewModel.exchangeRatesEntity!)
+                } catch let error as GeneralErrors {
+                    print("Error:", error.localizedDescription)
+                } catch {
+                    print("Error:", error)
+                }
+              
+            }
+        }
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+ //   ContentView()
+//}
