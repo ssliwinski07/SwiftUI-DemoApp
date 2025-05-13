@@ -23,8 +23,34 @@ struct ContentView: View {
             case (_, let error?, _):
                 Text(error)
             case (_, _, let rates?):
-                if let firstRate = rates.rates.first {
-                    Text(firstRate.code)
+                VStack {
+                    Text(rates.effectiveDate)
+                    
+                    List(rates.rates, id: \.self) { rate in
+                        VStack {
+                            HStack {
+                                Text(rate.currency)
+                                Text("\(String(format: "%.2f", rate.mid)) PLN")
+                            }
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+                    }
+                    .listStyle(PlainListStyle())
+                    .background(Color.clear)
+                    .padding(.bottom, 16)
+                    
+                    Spacer()
+                    
+                    Text("Refresh")
+                        .foregroundColor(.blue)
+                        .padding(.bottom, 16)
+                        .onTapGesture {
+                            Task {
+                                try await _viewModel.getCurrentRates()
+                            }
+                        }
                 }
             default:
                 Text("\(GeneralErrors.customMessage(message: "No data"))")
@@ -34,15 +60,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             Task {
-                do {
-                    try await _viewModel.getCurrentRates()
-                    print(_viewModel.exchangeRatesEntity!)
-                } catch let error as GeneralErrors {
-                    print("Error:", error.localizedDescription)
-                } catch {
-                    print("Error:", error)
-                }
-              
+                try await _viewModel.getCurrentRates()
             }
         }
     }

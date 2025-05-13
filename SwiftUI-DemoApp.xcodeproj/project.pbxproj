@@ -145,7 +145,6 @@
 			name = "SwiftUI-DemoApp";
 			packageProductDependencies = (
 				2AA061832DCFAD1500BE5222 /* Swinject */,
-				2AA061852DCFAD1500BE5222 /* Swinject-Dynamic */,
 				2A3F1E852DD236DB004E684B /* CombineMoya */,
 				2A3F1E872DD236DB004E684B /* Moya */,
 				2A3F1E892DD236DB004E684B /* ReactiveMoya */,
@@ -676,11 +675,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AA061822DCFAD1500BE5222 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		2AA061852DCFAD1500BE5222 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AA061822DCFAD1500BE5222 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

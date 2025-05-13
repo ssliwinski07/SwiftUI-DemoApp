@@ -16,7 +16,7 @@ struct ExchangeRatesModel: Codable {
         let rates = element.rates.map { rate in
             RateEntity(
                 currency: rate.currency,
-                code: rate.code,
+                code: rate.code, 
                 mid: rate.mid
             )
         }
