@@ -20,14 +20,14 @@ class ContentViewModel: ObservableObject {
         self._exchangeRatesRepository = exchangeRatesRepository
     }
     
-    func getCurrentRates() async throws {
+    func getCurrentRates(table: String) async throws {
         self.isLoading = true
         self.errorMsg = nil
         
         do {
             //simulation of delay
             try? await Task.sleep(nanoseconds: 3 * 1_000_000_000)
-            let rates = try await _exchangeRatesRepository.getCurrentRates()
+            let rates = try await _exchangeRatesRepository.getCurrentRates(table: table)
 
             self.exchangeRatesEntity = rates
             self.isLoading = false

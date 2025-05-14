@@ -18,7 +18,9 @@ final class NetworkManager {
         config.timeoutIntervalForRequest = 10
         config.timeoutIntervalForResource = 10
         let session = Session(configuration: config)
-        self.provider = MoyaProvider<MultiTarget>(session: session)
+        let plugins: [PluginType] = [GeneralQueryParameters()]
+        
+        self.provider = MoyaProvider<MultiTarget>(session: session, plugins: plugins)
     }
     
     private static let _shared = NetworkManager()

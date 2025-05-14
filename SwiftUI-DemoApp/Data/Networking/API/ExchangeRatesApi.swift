@@ -8,7 +8,7 @@ import Moya
 import Foundation
 
 enum ExchangeRatesApi {
-    case getCurrentRates(query: [String: Any]?)
+    case getCurrentRates(table: String)
 }
 
 extension ExchangeRatesApi: TargetType {
@@ -19,8 +19,8 @@ extension ExchangeRatesApi: TargetType {
     
     var path: String {
         switch self {
-        case .getCurrentRates:
-            return "/exchangerates/tables/A/"
+        case .getCurrentRates(let table):
+            return "/exchangerates/tables/\(table)/"
         }
     }
     
@@ -30,12 +30,8 @@ extension ExchangeRatesApi: TargetType {
     
     var task: Task {
         switch self {
-        case .getCurrentRates(let query):
-            if let query = query {
-                return .requestParameters(parameters: query, encoding: URLEncoding.default)
-            } else {
-                return .requestPlain
-            }
+        case .getCurrentRates(_):
+            return .requestPlain
         }
     }
     
