@@ -6,5 +6,5 @@
 //
 
 protocol ExchangeRatesRepositoryBase {
-    func getCurrentRates() async throws -> ExchangeRatesEntity
+    func getCurrentRates(table: String) async throws -> ExchangeRatesEntity
 }

@@ -13,8 +13,8 @@ final class ExchangeRatesRepository: ExchangeRatesRepositoryBase {
         self._exchangeRatesService = exchangeRatesService
     }
     
-    func getCurrentRates() async throws -> ExchangeRatesEntity {
-        let data = try await _exchangeRatesService.getCurrentRates()
+    func getCurrentRates(table: String) async throws -> ExchangeRatesEntity {
+        let data = try await _exchangeRatesService.getCurrentRates(table: table)
         let exchangeRatesEntity = data[0].toEntity(element:data[0])
         
         return exchangeRatesEntity

@@ -48,7 +48,7 @@ struct ContentView: View {
                         .padding(.bottom, 16)
                         .onTapGesture {
                             Task {
-                                try await _viewModel.getCurrentRates()
+                                try await _viewModel.getCurrentRates(table: "A")
                             }
                         }
                 }
@@ -60,7 +60,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             Task {
-                try await _viewModel.getCurrentRates()
+                try await _viewModel.getCurrentRates(table: "A")
             }
         }
     }
