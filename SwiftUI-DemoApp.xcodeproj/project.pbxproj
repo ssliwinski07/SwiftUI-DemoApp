@@ -11,6 +11,7 @@
 		2A3F1E882DD236DB004E684B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E872DD236DB004E684B /* Moya */; };
 		2A3F1E8A2DD236DB004E684B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E892DD236DB004E684B /* ReactiveMoya */; };
 		2A3F1E8C2DD236DB004E684B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3F1E8B2DD236DB004E684B /* RxMoya */; };
+		2A5031052DD8F0A500CC8CEE /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A5031042DD8F09D00CC8CEE /* CHANGELOG.md */; };
 		2AA0616E2DCFA4CF00BE5222 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0616D2DCFA4C800BE5222 /* README.md */; };
 		2AA061702DCFA61F00BE5222 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0616F2DCFA61F00BE5222 /* .gitignore */; };
 		2AA061842DCFAD1500BE5222 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 2AA061832DCFAD1500BE5222 /* Swinject */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A5031042DD8F09D00CC8CEE /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		2A5EB2552DCF9F5500C34037 /* SwiftUI-DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-DemoApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5EB2632DCF9F5600C34037 /* SwiftUI-DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-DemoAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5EB26D2DCF9F5600C34037 /* SwiftUI-DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-DemoAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 		2A5EB24C2DCF9F5400C34037 = {
 			isa = PBXGroup;
 			children = (
+				2A5031042DD8F09D00CC8CEE /* CHANGELOG.md */,
 				2AA0616F2DCFA61F00BE5222 /* .gitignore */,
 				2AA0616D2DCFA4C800BE5222 /* README.md */,
 				2A5EB2572DCF9F5500C34037 /* SwiftUI-DemoApp */,
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5031052DD8F0A500CC8CEE /* CHANGELOG.md in Resources */,
 				2AA0616E2DCFA4CF00BE5222 /* README.md in Resources */,
 				2AA061702DCFA61F00BE5222 /* .gitignore in Resources */,
 			);
